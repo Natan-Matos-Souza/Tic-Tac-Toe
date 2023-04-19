@@ -6,6 +6,7 @@ body {
 }
 
 #header {
+    width: 100%;
     margin: 0px auto 0px;
     height: 90px;
     background-color: #E74646;
@@ -16,7 +17,7 @@ body {
 
 #nav {
     position: relative;
-    top: -20px;
+    top: -5px;
 }
 
 #ul {
@@ -37,6 +38,7 @@ a img {
 
 #logo-a {
     position: absolute;
+    left: 120px;
 }
 
 #github-a {
@@ -48,4 +50,21 @@ a img {
 
 a span {
     font-size: 20px;
+}
+
+#game-area {
+    width: 1200px;
+    height: 700px;
+    margin: 120px auto 0px;
+}
+
+#game-text {
+    text-align: center;
+    height: 80px;
+}
+
+#game-text h1 {
+    font-weight: normal;
+    color: #FA9884;
+    font-size: 24px;
 }
