@@ -1,0 +1,51 @@
+body {
+    background-color: #FFF3E2;
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+#header {
+    margin: 0px auto 0px;
+    height: 90px;
+    background-color: #E74646;
+    color: #FFF3E2;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#nav {
+    position: relative;
+    top: -20px;
+}
+
+#ul {
+    display: inline;
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    display: inline;
+    text-decoration: none;
+    color: #FFF3E2;
+}
+
+a img {
+    height: 50px;
+}
+
+#logo-a {
+    position: absolute;
+}
+
+#github-a {
+    position: absolute;
+    right: 120px;
+    top: 0  px;
+    text-align: center;
+}
+
+a span {
+    font-size: 20px;
+}
