@@ -105,6 +105,7 @@ a span {
 }
 
 #game {
+    display: none;
     margin: 200px auto 0px;
     text-align: center;
 }
@@ -122,19 +123,50 @@ a span {
 }
 
 .game-btn {
-    box-sizing: border-box;
-    display: inline;
+    font-size: 32px;
     border: 1px solid #E74646;
     background-color: transparent;
     color: #FA9884;
     height: 84px;
     width: 109px;
-    margin: 0px;
+    margin: 0px 0px 0px 0px;
     padding: 0px;
 }
 
-.btn1, .btn2 , .btn3{
-    margin: 0;
+.bt1 {
+    border-left: none;
+    border-top: none;
+}
+
+.btn2 {
+    border-top: none;
+}
+
+.btn3 {
+    border-right: none;
+    border-top: none;
+}
+
+.btn4 {
+    border-left: none;
+}
+
+.btn6 {
+    border-right: none;
+}
+
+.btn7 {
+    border-bottom: none;
+    border-left: none;
+}
+
+.btn8 {
+    border-bottom: none;
+}
+
+.btn9 {
+    border-bottom: none;
+    border-right: none;
 }
 
 
