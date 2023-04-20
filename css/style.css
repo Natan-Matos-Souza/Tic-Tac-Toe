@@ -104,9 +104,38 @@ a span {
     font-size: 32px;
 }
 
+#game {
+    margin: 200px auto 0px;
+    text-align: center;
+}
 
 
+#game h1 {
+    color: #FA9884;
+    font-size: 20px;
+    font-weight: normal;
+}
 
+#row-one, #row-two, #row-three {
+    margin: auto;
+    padding: 0px;
+}
+
+.game-btn {
+    box-sizing: border-box;
+    display: inline;
+    border: 1px solid #E74646;
+    background-color: transparent;
+    color: #FA9884;
+    height: 84px;
+    width: 109px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.btn1, .btn2 , .btn3{
+    margin: 0;
+}
 
 
 

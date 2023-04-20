@@ -4,6 +4,7 @@
 const startgame = document.getElementById("start-game-btn")
 const startgamedisplay = document.getElementById("start-game")
 const testtext = document.getElementById('game-configuration')
+var playerOneCharacter = null
 
 
 startgame.onclick = hideStartGame = () => {
@@ -25,7 +26,7 @@ const gameConfigurationHud = document.getElementById('game-configuration')
 
 xbtn.onclick = selectX = () => {
 
-    var playerOneCharacter = "X"
+    playerOneCharacter = "X"
     gameConfigurationHud.style.animation = "dissapearEffect 2s"
     setTimeout(dissapear = () => {
         gameConfigurationHud.style.display = "none"
