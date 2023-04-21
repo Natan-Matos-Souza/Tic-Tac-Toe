@@ -97,6 +97,7 @@ btn1.onclick = play = () => {
             playerTurn = 1
         }
 
+        verifyWinner()
         verifyPlayerTurn()
     }
 }
@@ -114,6 +115,7 @@ btn2.onclick = play = () => {
             btn2.value = playerTwoCharacter
             playerTurn = 1
         }
+        verifyWinner()
         verifyPlayerTurn()
     }
 }
@@ -149,6 +151,7 @@ btn4.onclick = play = () => {
             btn4.value = playerTwoCharacter
             playerTurn = 1
         }
+        verifyWinner()
         verifyPlayerTurn()
     }
 }
@@ -166,7 +169,7 @@ btn5.onclick = play = () => {
             btn5.value = playerTwoCharacter
             playerTurn = 1
         }
-
+        verifyWinner()
         verifyPlayerTurn()
     }
 }
@@ -184,7 +187,7 @@ btn6.onclick = play = () => {
             btn6.value = playerTwoCharacter
             playerTurn = 1
         }
-
+        verifyWinner()
         verifyPlayerTurn()
     }
 }
@@ -202,7 +205,7 @@ btn7.onclick = play = () => {
             btn7.value = playerTwoCharacter
             playerTurn = 1
         }
-
+        verifyWinner()
         verifyPlayerTurn()
     }
 }
@@ -220,7 +223,7 @@ btn8.onclick = play = () => {
             btn8.value = playerTwoCharacter
             playerTurn = 1
         }
-
+        verifyWinner()
         verifyPlayerTurn()
     }
 }
@@ -238,7 +241,7 @@ btn9.onclick = play = () => {
             btn9.value = playerTwoCharacter
             playerTurn = 1
         }
-
+        verifyWinner()
         verifyPlayerTurn()
     }
 }
@@ -272,10 +275,32 @@ const verifyWinner = () => {
         playerAlert.Alert.innerHTML = "Player One wins !"
     }
     
-    if (btn7.value == playerOneCharacter && btn8.value == playerOneCharacter && btn9.value == playerOneCharacter) {
+    if (btn7.value == playerTwoCharacter && btn8.value == playerTwoCharacter && btn9.value == playerTwoCharacter) {
 
-     
-        playerAlert.Alert.innerHTML = "Player One wins !"
+        playerAlert.Alert.innerHTML = "Player Two wins !"
     }
     
+    if (btn1.value == playerOneCharacter && btn5.value == playerOneCharacter && btn9.value == playerOneCharacter) {
+
+        playerAlert.innerHTML = "Player One wins !"
+
+    }
+
+    if (btn1.value == playerTwoCharacter && btn5.value == playerTwoCharacter && btn9.value == playerTwoCharacter) {
+
+        playerAlert.innerHTML = "Player Two wins !"
+
+    }
+
+    if (btn3.value == playerOneCharacter && btn5.value == playerOneCharacter && btn7.value == playerOneCharacter) {
+
+        playerAlert.innerHTML = "Player One wins !"
+
+    }
+
+    if (btn3.value == playerTwoCharacter && btn5.value == playerTwoCharacter && btn7.value == playerTwoCharacter) {
+
+        playerAlert.innerHTML = "Player Two wins !"
+
+    }
 }
