@@ -123,6 +123,7 @@ a span {
 }
 
 .game-btn {
+    transition: 1s;
     font-size: 32px;
     border: 1px solid #E74646;
     background-color: transparent;

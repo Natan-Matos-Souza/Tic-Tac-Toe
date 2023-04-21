@@ -6,7 +6,7 @@ const startgamedisplay = document.getElementById("start-game")
 const testtext = document.getElementById('game-configuration')
 var playerOneCharacter = null
 var playerTwoCharacter = null
-var playerTurn = null
+var playerTurn = 1
 var turns = 0
 
 
@@ -67,17 +67,165 @@ const btn7 = document.getElementById('btn7')
 const btn8 = document.getElementById('btn8')
 const btn9 = document.getElementById('btn9')
 
-const play = () => {
 
-    if (playerTurn = 1) {
+btn1.onclick = play = () => {
 
-        btn1.value = playerOneCharacter
-        playerTurn = 2
-    } else {
-        btn1.value = playerTwoCharacter
+    if (btn1.value == " ") {
+
+        if (playerTurn == 1) {
+
+            btn1.value = playerOneCharacter
+            playerTurn++
+
+        } else {
+            btn1.value = playerTwoCharacter
+            playerTurn = 1
+        }
     }
-
 }
 
-btn1.onclick = play
+btn2.onclick = play = () => {
 
+    if (btn2.value == " ") {
+
+        if (playerTurn == 1) {
+
+            btn2.value = playerOneCharacter
+            playerTurn++
+
+        } else {
+            btn2.value = playerTwoCharacter
+            playerTurn = 1
+        }
+    }
+}
+
+btn3.onclick = play = () => {
+
+    if (btn3.value == " ") {
+
+        if (playerTurn == 1) {
+
+            btn3.value = playerOneCharacter
+            playerTurn++
+
+        } else {
+            btn3.value = playerTwoCharacter
+            playerTurn = 1
+        }
+        verifyWinner()
+    }
+}
+
+btn4.onclick = play = () => {
+
+    if (btn4.value == " ") {
+
+        if (playerTurn == 1) {
+
+            btn4.value = playerOneCharacter
+            playerTurn++
+
+        } else {
+            btn4.value = playerTwoCharacter
+            playerTurn = 1
+        }
+    }
+}
+
+btn5.onclick = play = () => {
+
+    if (btn5.value == " ") {
+
+        if (playerTurn == 1) {
+
+            btn5.value = playerOneCharacter
+            playerTurn++
+
+        } else {
+            btn5.value = playerTwoCharacter
+            playerTurn = 1
+        }
+    }
+}
+
+btn6.onclick = play = () => {
+
+    if (btn6.value == " ") {
+
+        if (playerTurn == 1) {
+
+            btn6.value = playerOneCharacter
+            playerTurn++
+
+        } else {
+            btn6.value = playerTwoCharacter
+            playerTurn = 1
+        }
+    }
+}
+
+btn7.onclick = play = () => {
+
+    if (btn7.value == " ") {
+
+        if (playerTurn == 1) {
+
+            btn7.value = playerOneCharacter
+            playerTurn++
+
+        } else {
+            btn7.value = playerTwoCharacter
+            playerTurn = 1
+        }
+    }
+}
+
+btn8.onclick = play = () => {
+
+    if (btn8.value == " ") {
+
+        if (playerTurn == 1) {
+
+            btn8.value = playerOneCharacter
+            playerTurn++
+
+        } else {
+            btn8.value = playerTwoCharacter
+            playerTurn = 1
+        }
+    }
+}
+
+btn9.onclick = play = () => {
+
+    if (btn9.value == " ") {
+
+        if (playerTurn == 1) {
+
+            btn9.value = playerOneCharacter
+            playerTurn++
+
+        } else {
+            btn9.value = playerTwoCharacter
+            playerTurn = 1
+        }
+    }
+}
+
+const verifyWinner = () => {
+
+
+    if (btn1.value == playerOneCharacter && btn2.value == playerOneCharacter && btn3.value == playerOneCharacter) {
+
+        console.log("O jogador 1 venceu !")
+    }
+
+    if (btn1.value == playerTwoCharacter && btn2.value == playerTwoCharacter && btn3.value == playerTwoCharacter) {
+
+        console.log("O jogador 2 venceu !")
+    }
+
+
+
+}
