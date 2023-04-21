@@ -177,6 +177,11 @@ a span {
 
 }
 
+#end-game-btns {
+    display: none;
+}
+
+
 /*animations */
 
 @keyframes dissapearEffect {

@@ -251,7 +251,7 @@ const verifyWinner = () => {
     const playerAlert = document.getElementById('player-alert-h1') 
 
     if (btn1.value == playerOneCharacter && btn2.value == playerOneCharacter && btn3.value == playerOneCharacter) {
-
+        endGameHud.style.display = "block"
         playerAlert.innerHTML = "Player One wins !"
     }
 
@@ -303,4 +303,31 @@ const verifyWinner = () => {
         playerAlert.innerHTML = "Player Two wins !"
 
     }
+}
+
+const endGameHud = document.getElementById('end-game-btns')
+const menuBtn = document.getElementById('menu-btn')
+const restartBtn = document.getElementById('restart-btn')
+
+
+const restartGame = () => {
+
+    btn1.value = " "
+    btn2.value = " "
+    btn3.value = " "
+    btn4.value = " "
+    btn5.value = " "
+    btn6.value = " "
+    btn7.value = " "
+    btn8.value = " "
+    btn9.value = " "
+}
+
+restartBtn.onclick = restartGame
+
+menuBtn.onclick = backToMenu = () => {
+
+    gameHud.style.display = "none"
+    endGameHud.style.display = "none"
+    gameConfigurationHud.style.display = "block"
 }
