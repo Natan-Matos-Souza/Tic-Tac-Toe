@@ -3,11 +3,12 @@
 
 const startgame = document.getElementById("start-game-btn")
 const startgamedisplay = document.getElementById("start-game")
-const testtext = document.getElementById('game-configuration')
+const gameConfigurationHud = document.getElementById('game-configuration')
 var playerOneCharacter = null
 var playerTwoCharacter = null
 var playerTurn = 1
 var playerClick = false
+var gameStatus = true
 var turns = 0
 
 
@@ -16,15 +17,14 @@ startgame.onclick = hideStartGame = () => {
     startgamedisplay.style.animation = "dissapearEffect 2s"
     setTimeout(disspear = () => {
         startgamedisplay.style.display = "none"
-        testtext.style.animation = "appearEffect 500ms"
-        testtext.style.display = "block"
+        gameConfigurationHud.style.animation = "appearEffect 500ms"
+        gameConfigurationHud.style.display = "block"
     }, 300)
     
 }
 
 const xbtn = document.getElementById('X-button')
 const obtn = document.getElementById('O-button')
-const gameConfigurationHud = document.getElementById('game-configuration')
 const gameHud = document.getElementById('game')
 
 
@@ -55,6 +55,11 @@ obtn.onclick = selectO = () => {
     }, 300)
 
 }
+
+
+
+
+
 
 //importing buttons
 
@@ -251,56 +256,64 @@ const verifyWinner = () => {
     const playerAlert = document.getElementById('player-alert-h1') 
 
     if (btn1.value == playerOneCharacter && btn2.value == playerOneCharacter && btn3.value == playerOneCharacter) {
-        endGameHud.style.display = "block"
+        showEndGameHud()
         playerAlert.innerHTML = "Player One wins !"
     }
 
     if (btn1.value == playerTwoCharacter && btn2.value == playerTwoCharacter && btn3.value == playerTwoCharacter) {
-
+        showEndGameHud()
         playerAlert.innerHTML = "Player Two wins !"
+        
     }
 
     if (btn4.value == playerOneCharacter && btn5.value == playerOneCharacter && btn6.value == playerOneCharacter) {
-
+        showEndGameHud()
         playerAlert.Alert.innerHTML = "Player One wins !"
     }
 
     if (btn4.value == playerTwoCharacter && btn5.value == playerTwoCharacter && btn6.value == playerTwoCharacter) {
-
+        showEndGameHud()
         playerAlert.Alert.innerHTML = "Player Two wins !"
     }
 
     if (btn7.value == playerOneCharacter && btn8.value == playerOneCharacter && btn9.value == playerOneCharacter) {
-
+        showEndGameHud()
         playerAlert.Alert.innerHTML = "Player One wins !"
     }
     
     if (btn7.value == playerTwoCharacter && btn8.value == playerTwoCharacter && btn9.value == playerTwoCharacter) {
-
+        showEndGameHud()
         playerAlert.Alert.innerHTML = "Player Two wins !"
     }
     
     if (btn1.value == playerOneCharacter && btn5.value == playerOneCharacter && btn9.value == playerOneCharacter) {
-
+        showEndGameHud()
         playerAlert.innerHTML = "Player One wins !"
 
     }
 
     if (btn1.value == playerTwoCharacter && btn5.value == playerTwoCharacter && btn9.value == playerTwoCharacter) {
-
+        showEndGameHud()
         playerAlert.innerHTML = "Player Two wins !"
 
     }
 
     if (btn3.value == playerOneCharacter && btn5.value == playerOneCharacter && btn7.value == playerOneCharacter) {
-
+        showEndGameHud()
         playerAlert.innerHTML = "Player One wins !"
 
     }
 
     if (btn3.value == playerTwoCharacter && btn5.value == playerTwoCharacter && btn7.value == playerTwoCharacter) {
-
+        showEndGameHud()
         playerAlert.innerHTML = "Player Two wins !"
+
+    }
+
+    if (turns >= 9 && gameStatus == true) {
+        showEndGameHud()
+        playerAlert.innerHTML = "Draw !"
+
 
     }
 }
@@ -309,9 +322,19 @@ const endGameHud = document.getElementById('end-game-btns')
 const menuBtn = document.getElementById('menu-btn')
 const restartBtn = document.getElementById('restart-btn')
 
+const showEndGameHud = () => {
+
+    endGameHud.style.animation = "appearEffect 500ms"
+    endGameHud.style.display = "block"
+
+
+}
+
 
 const restartGame = () => {
     playerTurn = 1
+    verifyPlayerTurn()
+    document.getElementById('player-alert-h1').innerHTML = "Click inside the square to start the game"
     btn1.value = " "
     btn2.value = " "
     btn3.value = " "
@@ -321,13 +344,24 @@ const restartGame = () => {
     btn7.value = " "
     btn8.value = " "
     btn9.value = " "
+    endGameHud.style.animation = "dissapearEffect 2s"
+    setTimeout(disspear = () => {
+        endGameHud.style.display = "none"
+    }, 300)
 }
 
 restartBtn.onclick = restartGame
 
 menuBtn.onclick = backToMenu = () => {
     restartGame()
-    gameHud.style.display = "none"
-    endGameHud.style.display = "none"
-    gameConfigurationHud.style.display = "block"
+    gameHud.style.animation = "dissapearEffect 2s"
+    endGameHud.style.animation = "dissapearEffect 2s"
+    
+    setTimeout(dissapear = () => {
+        gameHud.style.display = "none"
+        endGameHud.style.display = "none"
+        gameConfigurationHud.style.animation = "appearEffect 2s"
+        gameConfigurationHud.style.display = "block"
+    }, 300 )
+    
 }

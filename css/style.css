@@ -179,6 +179,20 @@ a span {
 
 #end-game-btns {
     display: none;
+    width: 100%;
+    margin: 0px auto 0px;
+    text-align: center;
+}
+
+.end-game-btn {
+    margin: 12px;
+    background-color: #E74646;
+    color: #FFF3E2;
+    border: none;
+    border-radius: 4px;
+    width: 206px;
+    height: 77px;
+    font-size: 24px;
 }
 
 
