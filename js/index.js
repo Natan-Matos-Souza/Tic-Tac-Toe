@@ -7,6 +7,7 @@ const testtext = document.getElementById('game-configuration')
 var playerOneCharacter = null
 var playerTwoCharacter = null
 var playerTurn = 1
+var playerClick = false
 var turns = 0
 
 
@@ -68,6 +69,20 @@ const btn8 = document.getElementById('btn8')
 const btn9 = document.getElementById('btn9')
 
 
+const verifyPlayerTurn = () => {
+
+    if (playerTurn == 1) {
+
+        document.getElementById('game-text-h1').innerHTML = `Player One` 
+
+    } else {
+
+        document.getElementById('game-text-h1').innerHTML = "Player Two"
+
+    }
+
+}
+
 btn1.onclick = play = () => {
 
     if (btn1.value == " ") {
@@ -81,6 +96,8 @@ btn1.onclick = play = () => {
             btn1.value = playerTwoCharacter
             playerTurn = 1
         }
+
+        verifyPlayerTurn()
     }
 }
 
@@ -97,6 +114,7 @@ btn2.onclick = play = () => {
             btn2.value = playerTwoCharacter
             playerTurn = 1
         }
+        verifyPlayerTurn()
     }
 }
 
@@ -114,6 +132,7 @@ btn3.onclick = play = () => {
             playerTurn = 1
         }
         verifyWinner()
+        verifyPlayerTurn()
     }
 }
 
@@ -130,6 +149,7 @@ btn4.onclick = play = () => {
             btn4.value = playerTwoCharacter
             playerTurn = 1
         }
+        verifyPlayerTurn()
     }
 }
 
@@ -146,6 +166,8 @@ btn5.onclick = play = () => {
             btn5.value = playerTwoCharacter
             playerTurn = 1
         }
+
+        verifyPlayerTurn()
     }
 }
 
@@ -162,6 +184,8 @@ btn6.onclick = play = () => {
             btn6.value = playerTwoCharacter
             playerTurn = 1
         }
+
+        verifyPlayerTurn()
     }
 }
 
@@ -178,6 +202,8 @@ btn7.onclick = play = () => {
             btn7.value = playerTwoCharacter
             playerTurn = 1
         }
+
+        verifyPlayerTurn()
     }
 }
 
@@ -194,6 +220,8 @@ btn8.onclick = play = () => {
             btn8.value = playerTwoCharacter
             playerTurn = 1
         }
+
+        verifyPlayerTurn()
     }
 }
 
@@ -210,22 +238,44 @@ btn9.onclick = play = () => {
             btn9.value = playerTwoCharacter
             playerTurn = 1
         }
+
+        verifyPlayerTurn()
     }
 }
 
 const verifyWinner = () => {
-
+    
+    const playerAlert = document.getElementById('player-alert-h1') 
 
     if (btn1.value == playerOneCharacter && btn2.value == playerOneCharacter && btn3.value == playerOneCharacter) {
 
-        console.log("O jogador 1 venceu !")
+        playerAlert.innerHTML = "Player One wins !"
     }
 
     if (btn1.value == playerTwoCharacter && btn2.value == playerTwoCharacter && btn3.value == playerTwoCharacter) {
 
-        console.log("O jogador 2 venceu !")
+        playerAlert.innerHTML = "Player Two wins !"
     }
 
+    if (btn4.value == playerOneCharacter && btn5.value == playerOneCharacter && btn6.value == playerOneCharacter) {
 
+        playerAlert.Alert.innerHTML = "Player One wins !"
+    }
 
+    if (btn4.value == playerTwoCharacter && btn5.value == playerTwoCharacter && btn6.value == playerTwoCharacter) {
+
+        playerAlert.Alert.innerHTML = "Player Two wins !"
+    }
+
+    if (btn7.value == playerOneCharacter && btn8.value == playerOneCharacter && btn9.value == playerOneCharacter) {
+
+        playerAlert.Alert.innerHTML = "Player One wins !"
+    }
+    
+    if (btn7.value == playerOneCharacter && btn8.value == playerOneCharacter && btn9.value == playerOneCharacter) {
+
+     
+        playerAlert.Alert.innerHTML = "Player One wins !"
+    }
+    
 }

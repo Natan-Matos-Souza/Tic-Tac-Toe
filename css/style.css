@@ -106,12 +106,13 @@ a span {
 
 #game {
     display: none;
-    margin: 200px auto 0px;
+    margin: 80px auto 0px;
     text-align: center;
 }
 
 
 #game h1 {
+    margin: 0px auto 80px;
     color: #FA9884;
     font-size: 20px;
     font-weight: normal;
@@ -170,7 +171,11 @@ a span {
     border-right: none;
 }
 
+#player-alert {
 
+    margin: 80px auto 0px;
+
+}
 
 /*animations */
 
