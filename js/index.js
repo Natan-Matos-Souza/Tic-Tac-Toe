@@ -311,7 +311,7 @@ const restartBtn = document.getElementById('restart-btn')
 
 
 const restartGame = () => {
-
+    playerTurn = 1
     btn1.value = " "
     btn2.value = " "
     btn3.value = " "
@@ -326,7 +326,7 @@ const restartGame = () => {
 restartBtn.onclick = restartGame
 
 menuBtn.onclick = backToMenu = () => {
-
+    restartGame()
     gameHud.style.display = "none"
     endGameHud.style.display = "none"
     gameConfigurationHud.style.display = "block"
