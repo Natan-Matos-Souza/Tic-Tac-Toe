@@ -63,15 +63,82 @@ obtn.onclick = selectO = () => {
 
 //importing buttons
 
-const btn1 = document.getElementById('btn1')
-const btn2 = document.getElementById('btn2')
-const btn3 = document.getElementById('btn3')
-const btn4 = document.getElementById('btn4')
-const btn5 = document.getElementById('btn5')
-const btn6 = document.getElementById('btn6')
-const btn7 = document.getElementById('btn7')
-const btn8 = document.getElementById('btn8')
-const btn9 = document.getElementById('btn9')
+const btnTopLeft = document.getElementById('btn1')
+const btnTopMiddle = document.getElementById('btn2')
+const btnTopRight = document.getElementById('btn3')
+const btnMiddleLeft = document.getElementById('btn4')
+const btnMiddleCenter = document.getElementById('btn5')
+const btnMiddleRight = document.getElementById('btn6')
+const btnBottomLeft = document.getElementById('btn7')
+const btnBottomMiddle = document.getElementById('btn8')
+const btnBottomRight = document.getElementById('btn9')
+
+
+function buttonComportament(btnTopLeft){
+
+    if (btnTopLeft.value == " " && gameStatus == true) {
+
+        if (playerTurn == 1) {
+
+            btnTopLeft.value = playerOneCharacter
+            playerTurn++
+
+        } else {
+
+            btnTopLeft.value = playerTwoCharacter
+            playerTurn = 1
+        }
+        turns++
+        verifyPlayerTurn()
+        verifyWinner()
+        console.log(btnTopLeft)
+        console.log(`playerTurn: ${playerTurn}`)
+        console.log(`turns : ${turns}`)
+    }
+} 
+
+btnTopLeft.addEventListener("click", function() {
+    buttonComportament(btnTopLeft)
+})
+
+
+btnTopMiddle.addEventListener("click", function() {
+    buttonComportament(btnTopMiddle)
+})
+
+
+btnTopRight.addEventListener("click", function() {
+    buttonComportament(btnTopRight)
+})
+
+
+btnMiddleLeft.addEventListener("click", function() {
+    buttonComportament(btnMiddleLeft)
+})
+
+btnMiddleCenter.addEventListener("click", function() {
+    buttonComportament(btnMiddleCenter)
+})
+
+btnMiddleRight.addEventListener("click", function() {
+    buttonComportament(btnMiddleRight)
+})
+
+
+
+btnBottomLeft.addEventListener("click", function() {
+    buttonComportament(btnBottomLeft)
+})
+
+
+btnBottomMiddle.addEventListener("click", function() {
+    buttonComportament(btnBottomMiddle)
+})
+
+
+btnBottomRight.addEventListener("click", function() {
+    buttonComportament(btnBottomRight)
+})
 
 
 const verifyPlayerComportament = () => {
@@ -105,179 +172,6 @@ const verifyPlayerTurn = () => {
 
 }
 
-btn1.onclick = play = () => {
-
-    if (btn1.value == " " && gameStatus == true) {
-
-        if (playerTurn == 1) {
-
-            btn1.value = playerOneCharacter
-            playerTurn++
-
-        } else {
-            btn1.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        playerClicked = true
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
-
-btn2.onclick = play = () => {
-
-    if (btn2.value == " " && gameStatus == true) {
-
-        if (playerTurn == 1) {
-
-            btn2.value = playerOneCharacter
-            playerTurn++
-
-        } else {
-            btn2.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        playerClicked = true
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
-
-btn3.onclick = play = () => {
-
-    if (btn3.value == " " && gameStatus == true) {
-
-        if (playerTurn == 1) {
-
-            btn3.value = playerOneCharacter
-            playerTurn++
-
-        } else {
-            btn3.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        playerClicked = true
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
-
-btn4.onclick = play = () => {
-
-    if (btn4.value == " " && gameStatus == true) {
-
-        if (playerTurn == 1) {
-
-            btn4.value = playerOneCharacter
-            playerTurn++
-
-        } else {
-            btn4.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
-
-btn5.onclick = play = () => {
-
-    if (btn5.value == " " && gameStatus == true) {
-
-        if (playerTurn == 1) {
-
-            btn5.value = playerOneCharacter
-            playerTurn++
-
-        } else {
-            btn5.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
-
-btn6.onclick = play = () => {
-
-    if (btn6.value == " " && gameStatus == true) {
-
-        if (playerTurn == 1) {
-
-            btn6.value = playerOneCharacter
-            playerTurn++
-
-        } else {
-            btn6.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
-
-btn7.onclick = play = () => {
-
-    if (btn7.value == " " && gameStatus == true) {
-
-        if (playerTurn == 1) {
-
-            btn7.value = playerOneCharacter
-            playerTurn++
-
-        } else {
-            btn7.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
-
-btn8.onclick = play = () => {
-
-    if (btn8.value == " " && gameStatus == true) {
-
-        if (playerTurn == 1) {
-
-            btn8.value = playerOneCharacter
-            playerTurn++
-
-        } else {
-            btn8.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
-
-btn9.onclick = play = () => {
-
-    if (btn9.value == " " && gameStatus == true) {
-
-        if (playerTurn == 1) {
-
-            btn9.value = playerOneCharacter
-            playerTurn++
-
-        } else {
-            btn9.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
 
 const verifyWinner = () => {
     
