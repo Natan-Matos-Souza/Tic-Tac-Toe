@@ -1,16 +1,15 @@
 //Importing elements
 
-
 const startgame = document.getElementById("start-game-btn")
 const startgamedisplay = document.getElementById("start-game")
 const gameConfigurationHud = document.getElementById('game-configuration')
 var playerOneCharacter = null
 var playerTwoCharacter = null
 var playerTurn = 1
-var playerClick = false
-var gameStatus = true
+var playerClicked = false
+var gameStatus = null
 var turns = 0
-
+var verifyPlayerComportamentLoop = null
 
 startgame.onclick = hideStartGame = () => {
 
@@ -33,6 +32,10 @@ xbtn.onclick = selectX = () => {
     playerOneCharacter = "X"
     playerTwoCharacter = "O"
     gameConfigurationHud.style.animation = "dissapearEffect 2s"
+    gameStatus = true
+    
+    var verifyPlayerComportamentLoop = setInterval(verifyPlayerComportament, 5000)
+    
     setTimeout(dissapear = () => {
         gameConfigurationHud.style.display = "none"
         gameHud.style.animation = "appearEffect 2s"
@@ -47,6 +50,8 @@ obtn.onclick = selectO = () => {
     playerOneCharacter = "O"
     playerTwoCharacter = "X"
     gameConfigurationHud.style.animation = "dissapearEffect 2s"
+    gameStatus = true
+    var verifyPlayerComportamentLoop = setInterval(verifyPlayerComportament, 1000)
     setTimeout(dissapear = () => {
 
         gameConfigurationHud.style.display = "none"
@@ -55,11 +60,6 @@ obtn.onclick = selectO = () => {
     }, 300)
 
 }
-
-
-
-
-
 
 //importing buttons
 
@@ -73,6 +73,23 @@ const btn7 = document.getElementById('btn7')
 const btn8 = document.getElementById('btn8')
 const btn9 = document.getElementById('btn9')
 
+
+const verifyPlayerComportament = () => {
+
+    setTimeout(verifyPlayer = () => {
+
+        if (playerClicked == false) {
+
+            document.getElementById('player-alert-h1').innerHTML = "Click inside the square to start the game"
+        } else {
+            document.getElementById('player-alert-h1').innerHTML = ""
+        }
+
+    }, 1000)
+
+
+
+}
 
 const verifyPlayerTurn = () => {
 
@@ -102,8 +119,9 @@ btn1.onclick = play = () => {
             playerTurn = 1
         }
         turns++
-        verifyWinner()
+        playerClicked = true
         verifyPlayerTurn()
+        verifyWinner()
     }
 }
 
@@ -121,8 +139,9 @@ btn2.onclick = play = () => {
             playerTurn = 1
         }
         turns++
-        verifyWinner()
+        playerClicked = true
         verifyPlayerTurn()
+        verifyWinner()
     }
 }
 
@@ -140,8 +159,9 @@ btn3.onclick = play = () => {
             playerTurn = 1
         }
         turns++
-        verifyWinner()
+        playerClicked = true
         verifyPlayerTurn()
+        verifyWinner()
     }
 }
 
@@ -159,8 +179,8 @@ btn4.onclick = play = () => {
             playerTurn = 1
         }
         turns++
-        verifyWinner()
         verifyPlayerTurn()
+        verifyWinner()
     }
 }
 
@@ -178,8 +198,8 @@ btn5.onclick = play = () => {
             playerTurn = 1
         }
         turns++
-        verifyWinner()
         verifyPlayerTurn()
+        verifyWinner()
     }
 }
 
@@ -197,8 +217,8 @@ btn6.onclick = play = () => {
             playerTurn = 1
         }
         turns++
-        verifyWinner()
         verifyPlayerTurn()
+        verifyWinner()
     }
 }
 
@@ -216,8 +236,8 @@ btn7.onclick = play = () => {
             playerTurn = 1
         }
         turns++
-        verifyWinner()
         verifyPlayerTurn()
+        verifyWinner()
     }
 }
 
@@ -235,8 +255,8 @@ btn8.onclick = play = () => {
             playerTurn = 1
         }
         turns++
-        verifyWinner()
         verifyPlayerTurn()
+        verifyWinner()
     }
 }
 
@@ -254,14 +274,14 @@ btn9.onclick = play = () => {
             playerTurn = 1
         }
         turns++
-        verifyWinner()
         verifyPlayerTurn()
+        verifyWinner()
     }
 }
 
 const verifyWinner = () => {
     
-    const playerAlert = document.getElementById('player-alert-h1') 
+    const playerAlert = document.getElementById('game-text-h1') 
 
     if (btn1.value == playerOneCharacter && btn2.value == playerOneCharacter && btn3.value == playerOneCharacter) {
         showEndGameHud()
