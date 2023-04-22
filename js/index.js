@@ -417,7 +417,6 @@ const restartGame = () => {
     turns = 0
     gameStatus = true
     verifyPlayerTurn()
-    document.getElementById('player-alert-h1').innerHTML = "Click inside the square to start the game"
     btn1.value = " "
     btn2.value = " "
     btn3.value = " "
