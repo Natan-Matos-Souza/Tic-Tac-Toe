@@ -299,7 +299,7 @@ const verifyWinner = () => {
     if (btn4.value == playerOneCharacter && btn5.value == playerOneCharacter && btn6.value == playerOneCharacter) {
         showEndGameHud()
         gameStatus = false
-        playerAlert.Alert.innerHTML = "Player One wins !"
+        playerAlert.innerHTML = "Player One wins !"
     }
 
     if (btn4.value == playerTwoCharacter && btn5.value == playerTwoCharacter && btn6.value == playerTwoCharacter) {
@@ -311,13 +311,13 @@ const verifyWinner = () => {
     if (btn7.value == playerOneCharacter && btn8.value == playerOneCharacter && btn9.value == playerOneCharacter) {
         showEndGameHud()
         gameStatus = false
-        playerAlert.Alert.innerHTML = "Player One wins !"
+        playerAlert.innerHTML = "Player One wins !"
     }
     
     if (btn7.value == playerTwoCharacter && btn8.value == playerTwoCharacter && btn9.value == playerTwoCharacter) {
         showEndGameHud()
         gameStatus = false
-        playerAlert.Alert.innerHTML = "Player Two wins !"
+        playerAlert.innerHTML = "Player Two wins !"
     }
     
     if (btn1.value == playerOneCharacter && btn5.value == playerOneCharacter && btn9.value == playerOneCharacter) {
