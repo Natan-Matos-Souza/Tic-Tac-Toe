@@ -51,7 +51,7 @@ obtn.onclick = selectO = () => {
     playerTwoCharacter = "X"
     gameConfigurationHud.style.animation = "dissapearEffect 2s"
     gameStatus = true
-    var verifyPlayerComportamentLoop = setInterval(verifyPlayerComportament, 1000)
+    verifyPlayerComportamentLoop = setInterval(verifyPlayerComportament, 1000)
     setTimeout(dissapear = () => {
 
         gameConfigurationHud.style.display = "none"
@@ -89,6 +89,7 @@ function buttonComportament(btnTopLeft){
             playerTurn = 1
         }
         turns++
+        playerClicked = true
         verifyPlayerTurn()
         verifyWinner()
         console.log(btnTopLeft)
@@ -101,16 +102,13 @@ btnTopLeft.addEventListener("click", function() {
     buttonComportament(btnTopLeft)
 })
 
-
 btnTopMiddle.addEventListener("click", function() {
     buttonComportament(btnTopMiddle)
 })
 
-
 btnTopRight.addEventListener("click", function() {
     buttonComportament(btnTopRight)
 })
-
 
 btnMiddleLeft.addEventListener("click", function() {
     buttonComportament(btnMiddleLeft)
@@ -124,17 +122,13 @@ btnMiddleRight.addEventListener("click", function() {
     buttonComportament(btnMiddleRight)
 })
 
-
-
 btnBottomLeft.addEventListener("click", function() {
     buttonComportament(btnBottomLeft)
 })
 
-
 btnBottomMiddle.addEventListener("click", function() {
     buttonComportament(btnBottomMiddle)
-})
-
+    })
 
 btnBottomRight.addEventListener("click", function() {
     buttonComportament(btnBottomRight)
@@ -153,9 +147,6 @@ const verifyPlayerComportament = () => {
         }
 
     }, 1000)
-
-
-
 }
 
 const verifyPlayerTurn = () => {
@@ -301,10 +292,7 @@ const showEndGameHud = () => {
 
     endGameHud.style.animation = "appearEffect 500ms"
     endGameHud.style.display = "block"
-
-
 }
-
 
 const restartGame = () => {
     playerTurn = 1
