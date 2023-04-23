@@ -73,6 +73,30 @@ const btnBottomLeft = document.getElementById('btn7')
 const btnBottomMiddle = document.getElementById('btn8')
 const btnBottomRight = document.getElementById('btn9')
 
+function playerComputer() {
+    var freeButtons = []
+
+    function verifyFreeButtons(btnTopLeft) {
+
+        if (btnTopLeft.value == " ")
+        freeButtons.push(btnTopLeft)
+    }
+
+    verifyFreeButtons(btnTopLeft)
+    verifyFreeButtons(btnTopMiddle)
+    verifyFreeButtons(btnTopRight)
+    verifyFreeButtons(btnMiddleLeft)
+    verifyFreeButtons(btnMiddleCenter)
+    verifyFreeButtons(btnMiddleRight)
+    verifyFreeButtons(btnBottomLeft)
+    verifyFreeButtons(btnBottomMiddle)
+    verifyFreeButtons(btnBottomRight)
+    console.log(freeButtons.length)
+    const arrayLenght = freeButtons.length++
+    const randButton = Math.floor(Math.random() * arrayLenght)
+    freeButtons[randButton].value = playerTwoCharacter
+}
+
 
 function buttonComportament(btnTopLeft){
 
@@ -81,14 +105,8 @@ function buttonComportament(btnTopLeft){
         if (playerTurn == 1) {
 
             btnTopLeft.value = playerOneCharacter
-            playerTurn++
-
-        } else {
-
-            btnTopLeft.value = playerTwoCharacter
-            playerTurn = 1
+            playerComputer()
         }
-        turns++
         playerClicked = true
         verifyPlayerTurn()
         verifyWinner()
