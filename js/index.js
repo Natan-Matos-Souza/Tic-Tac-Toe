@@ -78,9 +78,36 @@ function playerComputer() {
 
     function verifyFreeButtons(btnTopLeft) {
 
-        if (btnTopLeft.value == " ")
+        if (btnTopLeft.value == " " && gameStatus == true)
         freeButtons.push(btnTopLeft)
     }
+    
+     if (btnTopMiddle.value == playerOneCharacter && btnTopRight.value == playerOneCharacter || btnBottomLeft.value == playerOneCharacter && btnMiddleLeft.value == playerOneCharacter || btnBottomRight.value == playerOneCharacter && btnMiddleCenter.value == playerOneCharacter) {
+
+        if (btnTopLeft.value == " ") {
+            btnTopLeft.value = playerTwoCharacter
+        }
+    }
+
+    else if (btnTopLeft.value == playerOneCharacter && btnTopRight.value == playerOneCharacter || btnMiddleCenter.value == playerOneCharacter && btnBottomMiddle.value == playerOneCharacter) {
+
+        if (btnTopMiddle.value == " ") {
+
+            btnTopMiddle.value = playerTwoCharacter
+
+        }
+    }
+
+    else if (btnTopLeft.value == playerOneCharacter && btnTopMiddle.value == playerOneCharacter || btnMiddleRight.value == playerOneCharacter && btnBottomRight.value == playerOneCharacter || btnBottomLeft.value == playerOneCharacter && btnMiddleCenter.value == playerOneCharacter) {
+
+        if (btnTopRight.value == " ") {
+
+            btnTopRight.value = playerTwoCharacter
+        }
+
+    } 
+    
+    else {
 
     verifyFreeButtons(btnTopLeft)
     verifyFreeButtons(btnTopMiddle)
@@ -91,10 +118,12 @@ function playerComputer() {
     verifyFreeButtons(btnBottomLeft)
     verifyFreeButtons(btnBottomMiddle)
     verifyFreeButtons(btnBottomRight)
+    console.log(freeButtons)
     console.log(freeButtons.length)
     const arrayLenght = freeButtons.length++
     const randButton = Math.floor(Math.random() * arrayLenght)
     freeButtons[randButton].value = playerTwoCharacter
+    }
 }
 
 
@@ -105,11 +134,11 @@ function buttonComportament(btnTopLeft){
         if (playerTurn == 1) {
 
             btnTopLeft.value = playerOneCharacter
+            verifyWinner()
             playerComputer()
         }
         playerClicked = true
         verifyPlayerTurn()
-        verifyWinner()
         console.log(btnTopLeft)
         console.log(`playerTurn: ${playerTurn}`)
         console.log(`turns : ${turns}`)
