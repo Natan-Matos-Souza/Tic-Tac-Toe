@@ -105,15 +105,12 @@ const verifyPlayerTurn = () => {
 
 }
 
-btn1.onclick = play = () => {
+function buttonBehavior(btn1) {
 
-    if (btn1.value == " " && gameStatus == true) {
-
+    if (btn1.value == "" && gameStatus == true) {
         if (playerTurn == 1) {
-
             btn1.value = playerOneCharacter
             playerTurn++
-
         } else {
             btn1.value = playerTwoCharacter
             playerTurn = 1
@@ -123,161 +120,47 @@ btn1.onclick = play = () => {
         verifyPlayerTurn()
         verifyWinner()
     }
+
 }
 
-btn2.onclick = play = () => {
 
-    if (btn2.value == " " && gameStatus == true) {
+btn1.addEventListener('click', function() {
+    buttonBehavior(btn1)
+})
 
-        if (playerTurn == 1) {
+btn2.addEventListener('click', function() {
+    buttonBehavior(btn2)
+})
 
-            btn2.value = playerOneCharacter
-            playerTurn++
+btn3.addEventListener('click', function() {
+    buttonBehavior(btn3)
+})
 
-        } else {
-            btn2.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        playerClicked = true
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
+btn4.addEventListener('click', function() {
+    buttonBehavior(btn4)
+})
 
-btn3.onclick = play = () => {
+btn5.addEventListener('click', function() {
+    buttonBehavior(btn5)
+})
 
-    if (btn3.value == " " && gameStatus == true) {
+btn6.addEventListener('click', function() {
+    buttonBehavior(btn6)
+})
 
-        if (playerTurn == 1) {
+btn7.addEventListener('click', function() {
+    buttonBehavior(btn7)
+})
 
-            btn3.value = playerOneCharacter
-            playerTurn++
+btn8.addEventListener('click', function() {
+    buttonBehavior(btn8)
+})
 
-        } else {
-            btn3.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        playerClicked = true
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
+btn9.addEventListener('click', function() {
+    buttonBehavior(btn9)
+})
 
-btn4.onclick = play = () => {
 
-    if (btn4.value == " " && gameStatus == true) {
-
-        if (playerTurn == 1) {
-
-            btn4.value = playerOneCharacter
-            playerTurn++
-
-        } else {
-            btn4.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
-
-btn5.onclick = play = () => {
-
-    if (btn5.value == " " && gameStatus == true) {
-
-        if (playerTurn == 1) {
-
-            btn5.value = playerOneCharacter
-            playerTurn++
-
-        } else {
-            btn5.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
-
-btn6.onclick = play = () => {
-
-    if (btn6.value == " " && gameStatus == true) {
-
-        if (playerTurn == 1) {
-
-            btn6.value = playerOneCharacter
-            playerTurn++
-
-        } else {
-            btn6.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
-
-btn7.onclick = play = () => {
-
-    if (btn7.value == " " && gameStatus == true) {
-
-        if (playerTurn == 1) {
-
-            btn7.value = playerOneCharacter
-            playerTurn++
-
-        } else {
-            btn7.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
-
-btn8.onclick = play = () => {
-
-    if (btn8.value == " " && gameStatus == true) {
-
-        if (playerTurn == 1) {
-
-            btn8.value = playerOneCharacter
-            playerTurn++
-
-        } else {
-            btn8.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
-
-btn9.onclick = play = () => {
-
-    if (btn9.value == " " && gameStatus == true) {
-
-        if (playerTurn == 1) {
-
-            btn9.value = playerOneCharacter
-            playerTurn++
-
-        } else {
-            btn9.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        verifyPlayerTurn()
-        verifyWinner()
-    }
-}
 
 const verifyWinner = () => {
     
