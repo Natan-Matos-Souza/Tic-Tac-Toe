@@ -160,118 +160,30 @@ btn9.addEventListener('click', function() {
     buttonBehavior(btn9)
 })
 
+function verifyWinner() {
 
+    function verifyGameCondition(bt1, btn2, btn3) {
+       if (btn1.value == playerOneCharacter && btn2.value == playerOneCharacter && btn3.value == playerOneCharacter) {
+            showEndGameHud()
+            gameStatus = false
+            playerAlert.innerHTML = "Player One wins !"
+        }
 
-const verifyWinner = () => {
-    
-    const playerAlert = document.getElementById('game-text-h1') 
-
-    if (btn1.value == playerOneCharacter && btn2.value == playerOneCharacter && btn3.value == playerOneCharacter) {
-        showEndGameHud()
-        gameStatus = false
-        playerAlert.innerHTML = "Player One wins !"
+        if (btn1.value == playerTwoCharacter && btn2.value == playerTwoCharacter && btn3.value == playerTwoCharacter) {
+            showEndGameHud()
+            gameStatus = false
+            playerAlert.innerHTML = "Player Two wins !"
+        }
     }
 
-    if (btn1.value == playerTwoCharacter && btn2.value == playerTwoCharacter && btn3.value == playerTwoCharacter) {
-        showEndGameHud()
-        gameStatus = false
-        playerAlert.innerHTML = "Player Two wins !"
-        
-    }
-
-    if (btn4.value == playerOneCharacter && btn5.value == playerOneCharacter && btn6.value == playerOneCharacter) {
-        showEndGameHud()
-        gameStatus = false
-        playerAlert.innerHTML = "Player One wins !"
-    }
-
-    if (btn4.value == playerTwoCharacter && btn5.value == playerTwoCharacter && btn6.value == playerTwoCharacter) {
-        showEndGameHud()
-        gameStatus = false
-        playerAlert.innerHTML = "Player Two wins !"
-    }
-
-    if (btn7.value == playerOneCharacter && btn8.value == playerOneCharacter && btn9.value == playerOneCharacter) {
-        showEndGameHud()
-        gameStatus = false
-        playerAlert.innerHTML = "Player One wins !"
-    }
-    
-    if (btn7.value == playerTwoCharacter && btn8.value == playerTwoCharacter && btn9.value == playerTwoCharacter) {
-        showEndGameHud()
-        gameStatus = false
-        playerAlert.innerHTML = "Player Two wins !"
-    }
-    
-    if (btn1.value == playerOneCharacter && btn5.value == playerOneCharacter && btn9.value == playerOneCharacter) {
-        showEndGameHud()
-        gameStatus = false
-        playerAlert.innerHTML = "Player One wins !"
-
-    }
-
-    if (btn1.value == playerTwoCharacter && btn5.value == playerTwoCharacter && btn9.value == playerTwoCharacter) {
-        showEndGameHud()
-        gameStatus = false
-        playerAlert.innerHTML = "Player Two wins !"
-
-    }
-
-    if (btn3.value == playerOneCharacter && btn5.value == playerOneCharacter && btn7.value == playerOneCharacter) {
-        showEndGameHud()
-        gameStatus = false
-        playerAlert.innerHTML = "Player One wins !"
-
-    }
-
-    if (btn3.value == playerTwoCharacter && btn5.value == playerTwoCharacter && btn7.value == playerTwoCharacter) {
-        showEndGameHud()
-        gameStatus = false
-        playerAlert.innerHTML = "Player Two wins !"
-
-    }
-
-    if (btn1.value == playerOneCharacter && btn4.value == playerOneCharacter && btn7.value == playerOneCharacter) {
-        showEndGameHud()
-        gameStatus = false
-        playerAlert.innerHTML = "Player One wins !"
-
-    }
-
-    if (btn1.value == playerTwoCharacter && btn4.value == playerTwoCharacter && btn7.value == playerTwoCharacter) {
-        showEndGameHud()
-        gameStatus = false
-        playerAlert.innerHTML = "Player Two wins !"
-
-    }
-
-    if (btn2.value == playerOneCharacter && btn5.value == playerOneCharacter && btn8.value == playerOneCharacter) {
-        showEndGameHud()
-        gameStatus = false
-        playerAlert.innerHTML = "Player One wins !"
-
-    }
-
-    if (btn2.value == playerTwoCharacter && btn5.value == playerTwoCharacter && btn8.value == playerTwoCharacter) {
-        showEndGameHud()
-        gameStatus = false
-        playerAlert.innerHTML = "Player Two wins !"
-
-    }
-
-    if (btn3.value == playerOneCharacter && btn6.value == playerOneCharacter && btn9.value == playerOneCharacter) {
-        showEndGameHud()
-        gameStatus = false
-        playerAlert.innerHTML = "Player One wins !"
-
-    }
-
-    if (btn3.value == playerTwoCharacter && btn6.value == playerTwoCharacter && btn9.value == playerTwoCharacter) {
-        showEndGameHud()
-        gameStatus = false
-        playerAlert.innerHTML = "Player Two wins !"
-
-    }
+    verifyGameCondition(btn1, btn2, btn3)
+    verifyGameCondition(btn4, btn5, btn6)
+    verifyGameCondition(btn7, btn8, btn9)
+    verifyGameCondition(btn1, btn4, btn7)
+    verifyGameCondition(btn2, btn5, btn8)
+    verifyGameCondition(btn3, btn6, btn9)
+    verifyGameCondition(btn1, btn5, btn9)
+    verifyGameCondition(btn3, btn5, btn7)
 
     if (turns >= 9 && gameStatus == true) {
         showEndGameHud()
@@ -280,6 +192,7 @@ const verifyWinner = () => {
 
 
     }
+
 }
 
 const endGameHud = document.getElementById('end-game-btns')
