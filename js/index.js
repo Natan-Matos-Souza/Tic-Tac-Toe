@@ -107,7 +107,7 @@ const verifyPlayerTurn = () => {
 
 function buttonBehavior(btn1) {
 
-    if (btn1.value == "" && gameStatus == true) {
+    if (btn1.value == " " && gameStatus == true) {
         if (playerTurn == 1) {
             btn1.value = playerOneCharacter
             playerTurn++
