@@ -172,7 +172,6 @@ a span {
 }
 
 #player-alert {
-
     margin: 80px auto 0px;
 
 }
@@ -194,6 +193,38 @@ a span {
     height: 77px;
     font-size: 24px;
 }
+
+@media screen and (max-width: 750px) {
+    #logo-a {
+        position: absolute;
+        left: 10px;
+        top: 5px;
+    }
+    
+    #logo-a img {
+        height: 40px;
+    }
+
+    #logo-a span {
+        font-size: 18px;
+    }
+
+    #github-a {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        text-align: center;
+    }   
+
+    #github-a img {
+        height: 40px;
+    }
+
+    #github-a span {
+        font-size: 18px;
+    }
+}
+
 
 
 /*animations */
