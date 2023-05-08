@@ -3,6 +3,7 @@
 const startgame = document.getElementById("start-game-btn")
 const startgamedisplay = document.getElementById("start-game")
 const gameConfigurationHud = document.getElementById('game-configuration')
+const playerAlert = document.getElementById('player-alert-h1')
 var playerOneCharacter
 var playerTwoCharacter
 var playerTurn = 1
@@ -124,7 +125,7 @@ const verifyPlayerTurn = () => {
 }
 
 function buttonBehavior(btn1) {
-    if (playerTurn == 1) {
+    if (playerTurn == 1 ) {
         playerOne.play(btn1)
         playerTurn = 2
     } else {
