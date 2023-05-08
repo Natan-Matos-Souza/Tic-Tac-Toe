@@ -3,11 +3,11 @@
 const startgame = document.getElementById("start-game-btn")
 const startgamedisplay = document.getElementById("start-game")
 const gameConfigurationHud = document.getElementById('game-configuration')
-var playerOneCharacter = null
-var playerTwoCharacter = null
+var playerOneCharacter
+var playerTwoCharacter
 var playerTurn = 1
 var playerClicked = false
-var gameStatus = null
+var gameStatus
 var turns = 0
 var verifyPlayerComportamentLoop = null
 
@@ -26,6 +26,17 @@ const xbtn = document.getElementById('X-button')
 const obtn = document.getElementById('O-button')
 const gameHud = document.getElementById('game')
 
+class Player {
+    constructor(a) {
+        this.playerCharacter = a
+    }
+    play(btn1) {
+        btn1.value = this.playerCharacter
+        turns++
+    }
+}
+
+
 
 xbtn.onclick = selectX = () => {
 
@@ -42,13 +53,17 @@ xbtn.onclick = selectX = () => {
         gameHud.style.display = "block"
     }, 300)
     
+    playerOne = new Player(playerOneCharacter)
+    playerTwo = new Player(playerTwoCharacter)
 
 }
+
 
 obtn.onclick = selectO = () => {
 
     playerOneCharacter = "O"
     playerTwoCharacter = "X"
+    console.log(playerOneCharacter)
     gameConfigurationHud.style.animation = "dissapearEffect 2s"
     gameStatus = true
     var verifyPlayerComportamentLoop = setInterval(verifyPlayerComportament, 1000)
@@ -59,7 +74,10 @@ obtn.onclick = selectO = () => {
         gameHud.style.display = "block"
     }, 300)
 
+    playerOne = new Player(playerOneCharacter)
+    playerTwo = new Player(playerTwoCharacter)
 }
+
 
 //importing buttons
 
@@ -106,23 +124,16 @@ const verifyPlayerTurn = () => {
 }
 
 function buttonBehavior(btn1) {
-
-    if (btn1.value == " " && gameStatus == true) {
-        if (playerTurn == 1) {
-            btn1.value = playerOneCharacter
-            playerTurn++
-        } else {
-            btn1.value = playerTwoCharacter
-            playerTurn = 1
-        }
-        turns++
-        playerClicked = true
-        verifyPlayerTurn()
-        verifyWinner()
+    if (playerTurn == 1) {
+        playerOne.play(btn1)
+        playerTurn = 2
+    } else {
+        playerTwo.play(btn1)
+        playerTurn = 1
     }
-
+    verifyWinner()
+    verifyPlayerTurn()
 }
-
 
 btn1.addEventListener('click', function() {
     buttonBehavior(btn1)
@@ -162,7 +173,7 @@ btn9.addEventListener('click', function() {
 
 function verifyWinner() {
 
-    function verifyGameCondition(bt1, btn2, btn3) {
+    function verifyGameCondition(btn1, btn2, btn3) {
        if (btn1.value == playerOneCharacter && btn2.value == playerOneCharacter && btn3.value == playerOneCharacter) {
             showEndGameHud()
             gameStatus = false
