@@ -132,8 +132,8 @@ function buttonBehavior(btn1) {
         playerTwo.play(btn1)
         playerTurn = 1
     }
-    verifyWinner()
     verifyPlayerTurn()
+    verifyWinner()
 }
 
 btn1.addEventListener('click', function() {
@@ -178,13 +178,13 @@ function verifyWinner() {
        if (btn1.value == playerOneCharacter && btn2.value == playerOneCharacter && btn3.value == playerOneCharacter) {
             showEndGameHud()
             gameStatus = false
-            playerAlert.innerHTML = "Player One wins !"
+            document.getElementById('game-text-h1').innerHTML = "Player One wins !"
         }
 
         if (btn1.value == playerTwoCharacter && btn2.value == playerTwoCharacter && btn3.value == playerTwoCharacter) {
             showEndGameHud()
             gameStatus = false
-            playerAlert.innerHTML = "Player Two wins !"
+            document.getElementById('game-text-h1').innerHTML = "Player Two wins !"
         }
     }
 
@@ -200,7 +200,7 @@ function verifyWinner() {
     if (turns >= 9 && gameStatus == true) {
         showEndGameHud()
         gameStatus = false
-        playerAlert.innerHTML = "Draw !"
+        document.getElementById('game-text-h1').innerHTML = "Draw !"
 
 
     }
