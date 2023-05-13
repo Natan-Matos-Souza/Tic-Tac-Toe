@@ -171,11 +171,6 @@ a span {
     border-right: none;
 }
 
-#player-alert {
-    margin: 80px auto 0px;
-
-}
-
 #end-game-btns {
     display: none;
     width: 100%;
@@ -277,4 +272,63 @@ a span {
     100% {
         opacity: 100%;
     }
+}
+
+@media screen and (max-width: 700px) {
+
+    #game h1 {
+        margin: 0px auto 40px;
+        color: #FA9884;
+        font-size: 16px;
+        font-weight: normal;
+    }
+    
+    .game-btn {
+    transition: 1s;
+    font-size: 24px;
+    border: 1px solid #E74646;
+    background-color: transparent;
+    color: #FA9884;
+    height: 60px;
+    width: 100px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+}
+
+
+.bt1 {
+    border-left: none;
+    border-top: none;
+}
+
+.btn2 {
+    border-top: none;
+}
+
+.btn3 {
+    border-right: none;
+    border-top: none;
+}
+
+.btn4 {
+    border-left: none;
+}
+
+.btn6 {
+    border-right: none;
+}
+
+.btn7 {
+    border-bottom: none;
+    border-left: none;
+}
+
+.btn8 {
+    border-bottom: none;
+}
+
+.btn9 {
+    border-bottom: none;
+    border-right: none;
+}
 }
