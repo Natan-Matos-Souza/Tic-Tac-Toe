@@ -7,7 +7,7 @@ const playerAlert = document.getElementById('player-alert-h1')
 var playerOneCharacter
 var playerTwoCharacter
 var playerTurn = 1
-var playerClicked = false
+var playerClicked
 var gameStatus
 var turns = 0
 var verifyPlayerComportamentLoop = null
@@ -46,8 +46,6 @@ xbtn.onclick = selectX = () => {
     gameConfigurationHud.style.animation = "dissapearEffect 2s"
     gameStatus = true
     
-    var verifyPlayerComportamentLoop = setInterval(verifyPlayerComportament, 5000)
-    
     setTimeout(dissapear = () => {
         gameConfigurationHud.style.display = "none"
         gameHud.style.animation = "appearEffect 2s"
@@ -67,7 +65,6 @@ obtn.onclick = selectO = () => {
     console.log(playerOneCharacter)
     gameConfigurationHud.style.animation = "dissapearEffect 2s"
     gameStatus = true
-    var verifyPlayerComportamentLoop = setInterval(verifyPlayerComportament, 1000)
     setTimeout(dissapear = () => {
 
         gameConfigurationHud.style.display = "none"
@@ -92,23 +89,6 @@ const btn7 = document.getElementById('btn7')
 const btn8 = document.getElementById('btn8')
 const btn9 = document.getElementById('btn9')
 
-
-const verifyPlayerComportament = () => {
-
-    setTimeout(verifyPlayer = () => {
-
-        if (playerClicked == false) {
-
-            document.getElementById('player-alert-h1').innerHTML = "Click inside the square to start the game"
-        } else {
-            document.getElementById('player-alert-h1').innerHTML = ""
-        }
-
-    }, 1000)
-
-
-
-}
 
 const verifyPlayerTurn = () => {
 
