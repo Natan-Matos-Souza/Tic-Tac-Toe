@@ -105,15 +105,30 @@ const verifyPlayerTurn = () => {
 }
 
 function buttonBehavior(btn1) {
-    if (playerTurn == 1 ) {
-        playerOne.play(btn1)
-        playerTurn = 2
-    } else {
-        playerTwo.play(btn1)
-        playerTurn = 1
+
+    const selectedBtn = btn1;
+
+
+    if (selectedBtn.value != 'X' && selectedBtn.value != 'O')
+    {
+        switch (playerTurn)
+        {
+            case 1:
+                playerOne.play(btn1)
+                playerTurn = 2
+                verifyPlayerTurn()
+                verifyWinner()
+                break;
+            
+            case 2:
+                playerTwo.play(btn1)
+                playerTurn = 1
+                verifyPlayerTurn()
+                verifyWinner()
+                break;
+        }
     }
-    verifyPlayerTurn()
-    verifyWinner()
+
 }
 
 btn1.addEventListener('click', function() {
